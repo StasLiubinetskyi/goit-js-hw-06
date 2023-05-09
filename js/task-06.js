@@ -12,3 +12,12 @@ input.addEventListener("blur", () => {
     input.classList.add("invalid");
   }
 });
+
+
+const button = document.querySelector(".my-button");
+
+const handleClick = () => {
+  console.log("Button was clicked");
+};
+
+button.addEventListener("click", handleClick);

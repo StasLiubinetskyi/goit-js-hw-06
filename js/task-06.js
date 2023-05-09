@@ -1,10 +1,10 @@
 const input = document.querySelector("#validation-input");
 
 input.addEventListener("blur", () => {
-  const expectedLength = input.dataset.length;
-  const currentLength = input.value.length;
+  const inputValue = input.value.trim();
+  const requiredLength = input.getAttribute("data-length");
 
-  if (currentLength === Number(expectedLength)) {
+  if (inputValue.length === parseInt(requiredLength)) {
     input.classList.remove("invalid");
     input.classList.add("valid");
   } else {
@@ -12,12 +12,3 @@ input.addEventListener("blur", () => {
     input.classList.add("invalid");
   }
 });
-
-
-const button = document.querySelector(".my-button");
-
-const handleClick = () => {
-  console.log("Button was clicked");
-};
-
-button.addEventListener("click", handleClick);
